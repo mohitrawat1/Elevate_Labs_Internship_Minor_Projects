@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+/* Navbar */
+nav {
+    height: 10vh;
+    background-color: #393E46;
+    justify-content: space-evenly;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #EEEEEE;
+    padding: 15px 20px;
+    border-radius: 10px;
+    position: relative;
+}
+nav a::after{
+    content: "";
+    height: 5px;
+    width: 0;
+    position: absolute;
+    background-color: linear-gradiant(to left, rgb(250,0,250)),cyan;
+    bottom: 0;
+    left: 0;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    margin: 5% auto;
+    width: 80%;
+    display: flex;
+    gap: 5%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.card {
+    margin-bottom: 1.5%;
+    background-color: #fff;
+    height: auto;
+    width: 30%;
+    border: 2px solid #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    
+    gap: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.info {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    color: black;
+    padding: 10px;
+}
+
+.mName {
+    align-self: flex-start;
+    margin: 5px;
+}
+
+.desc {
+    margin: 5px;
+}
+
+.info a {
+    margin: 5px;
+    display: block;
+    background-color: #00ADB5;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.info a:hover {
+    background-color: #008b92;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        height: auto;
+    }
+
+    nav a {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        margin: 50px auto;
+    }
+
+    .card {
+        gap: 5px;
+        width: 60%;
+        margin: 0 auto 20px auto;
+    }
+    .card img{
+        width: 100%;
+    }
+    .card:hover{
+        
+    }
+}
