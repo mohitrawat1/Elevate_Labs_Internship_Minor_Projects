@@ -31,14 +31,16 @@ nav a {
     border-radius: 10px;
     position: relative;
 }
-nav a::after{
+
+nav a::after {
     content: "";
     height: 5px;
     width: 0;
     position: absolute;
-    background-color: linear-gradiant(to left, rgb(250,0,250)),cyan;
+    background-image: linear-gradient(to left, rgb(250, 0, 250), cyan);
     bottom: 0;
     left: 0;
+    transition: width 0.3s ease;
 }
 
 nav a:hover::after {
@@ -55,7 +57,7 @@ nav a:hover::after {
     justify-content: center;
 }
 
-::-webkit-scrollbar{
+::-webkit-scrollbar {
     display: none;
 }
 
@@ -63,16 +65,16 @@ nav a:hover::after {
     margin-bottom: 1.5%;
     background-color: #fff;
     height: auto;
-    width: 30%;
+    width: 25%;
     border: 2px solid #EEEEEE;
     display: flex;
     flex-direction: column;
-    align-self: flex-start;
-    
     gap: 10px;
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.3s ease;
+    align-self: center;
+    /* Centering card */
 }
 
 .card:hover {
@@ -118,6 +120,59 @@ nav a:hover::after {
 .info a:hover {
     background-color: #008b92;
 }
+.footer {
+    background-color: #393E46;
+    color: #EEEEEE;
+    padding: 40px 20px 20px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1 1 300px;
+    margin: 10px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 15px;
+    color: #00ADB5;
+}
+
+.footer-section p,
+.footer-section li {
+    margin-bottom: 10px;
+    color: #EEEEEE;
+    list-style: none;
+}
+
+.footer-section a {
+    color: #EEEEEE;
+    text-decoration: none;
+    
+}
+
+.footer-section a:hover {
+    color: #00ADB5;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #555;
+    padding-top: 15px;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #cccccc;
+}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -132,23 +187,51 @@ nav a:hover::after {
     }
 
     .hero {
-        display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
-        justify-content: center;
         margin: 50px auto;
     }
 
     .card {
-        gap: 5px;
         width: 60%;
         margin: 0 auto 20px auto;
+        gap: 5px;
     }
-    .card img{
+
+    .card img {
         width: 100%;
     }
-    .card:hover{
-        
-    }
+        .footer-content {
+            height: 10%;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+    
+        .footer-section {
+            margin-bottom: 30px;
+            width: 90%;
+        }
+    
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+    
+        .footer-section ul li {
+            margin: 8px 0;
+        }
+    
+        .footer-section a {
+            font-size: 16px;
+        }
+    
+        .footer-section p {
+            font-size: 14px;
+        }
+    
+        .footer-bottom {
+            font-size: 12px;
+        }
 }
