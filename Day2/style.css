@@ -1,0 +1,145 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    height: fit-content;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.to_do {
+    background-color: #eee;
+    margin: 80px auto;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.to_do h1 {
+    font-size: 2rem;
+}
+
+input[type="text"] {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#btn {
+    padding: 10px 20px;
+    background-color: rgb(31, 164, 241);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    width: 120px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #026fb8cb;
+        font-weight: bold;
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    min-width: 200px;
+    width: auto;
+    padding: 10px;
+    margin-bottom: 8px;
+    background: gray;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+
+li button {
+    background-color: red;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    font-size: 12px;
+    margin-left: 5px;
+
+    &:hover {
+        background-color: rgba(255, 0, 0, 0.711);
+    }
+}
+
+::-webkit-scrollbar {
+    display: hidden;
+}
+
+@media (max-width: 768px) {
+    .to_do {
+        width: 90%;
+        min-height: 100vh;
+        height: auto;
+        overflow-y: auto;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .to_do::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+    }
+
+    .to_do {
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .to_do h1 {
+        font-size: 1.5rem;
+    }
+
+    .list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    input[type="text"] {
+        width: 90%;
+    }
+
+    #btn {
+        width: 90%;
+    }
+
+    li {
+        font-size: 1.1rem;
+    }
+}
